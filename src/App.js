@@ -6,6 +6,7 @@ import MyPerks from "./pages/MyPerks";
 import MyTransactions from "./pages/MyTransactions";
 import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import Modalbutton from "./components/cards/modalCard";
+import XlCard from "./components/cards/xlCard";
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
         </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <Modalbutton />
+          <XlCard />
         </Route>
       </Switch>
     </Router>

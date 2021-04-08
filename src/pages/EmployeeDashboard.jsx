@@ -11,8 +11,16 @@ const EmployeeDashboard = () => {
           <ProfileDisplay />
           <BalanceCard />
         </div>
-        <div className="bg-blue-300">2</div>
+
+        <div className="">
+          <div class="list pt-12 p-auto items-center">
+            <a href="/myPerks"><button class="btn px-10 mb-4 btn-outline-secondary">My Perks</button></a>
+            <a href="/myTransaction" class=""><button class="btn btn-outline-secondary">Purchase History</button></a>
+          </div>
+        </div>
+        
       </div>
+
     </MainBody>
   );
 };
