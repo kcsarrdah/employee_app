@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LoginPage from "./pages/loginPage";
-import MyPerks from "./pages/myPerks";
-import MyTransactions from "./pages/myTransactions";
-import EmployeeDashboard from "./pages/employeeDashboard.jsx";
+import LoginPage from "./pages/LoginPage";
+import MyPerks from "./pages/MyPerks";
+import MyTransactions from "./pages/MyTransactions";
+import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 
 function App() {
   return (
