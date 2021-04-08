@@ -8,6 +8,11 @@ import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import LargeCard from "./components/cards/largeCard";
 import SmallCard from "./components/cards/smallCard"
 import smallCardContainer from "./components/cards/CardContainer/smallCardcontainer";
+import SearchBar from "./components/searchBar/basicSearchBar"
+
+
+
+
 function App() {
   return (
     <Router>
@@ -29,12 +34,7 @@ function App() {
         </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <smallCardContainer>
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          <SmallCard />
-          </smallCardContainer>
+        <SearchBar />
           
         </Route>
       </Switch>

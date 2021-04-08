@@ -1,5 +1,5 @@
 import React from "react";
-import MainBody from "../component/MainBody";
+import MainBody from "../components/headers/MainBody";
 
 const LoginPage = () => {
   return (

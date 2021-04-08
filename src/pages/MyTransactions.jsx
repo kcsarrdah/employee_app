@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import MainBody from "../component/MainBody";
+import MainBody from "../components/headers/MainBody";
 
 const MyTransactions = () => {
   const transactions = [
