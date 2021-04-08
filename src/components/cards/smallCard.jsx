@@ -1,8 +1,8 @@
 import React from "react";
 
-const SmallCard = () => {
+const SmallCard = (props) => {
   return (
-    <a id="card" className="mx-5" href="#">
+    <a id="card" className="mx-5" href="#" onClick={props.onClick}>
       <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 sm:w-64  bg-gray-800 text-gray-100">
         <img
           alt=""

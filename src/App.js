@@ -5,12 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import MyPerks from "./pages/MyPerks";
 import MyTransactions from "./pages/MyTransactions";
 import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
-import LargeCard from "./components/cards/largeCard";
-import SmallCard from "./components/cards/smallCard";
-import smallCardContainer from "./components/cards/CardContainer/smallCardcontainer";
-import SearchBar from "./components/searchBar/basicSearchBar";
-import Modalbutton from "./components/Buttons/modalButton";
-import ProfileDisplay from "./components/profile/profileDisplay";
+import Modalbutton from "./components/cards/modalCard";
 
 function App() {
   return (
@@ -33,7 +28,7 @@ function App() {
         </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <ProfileDisplay />
+          <Modalbutton />
         </Route>
       </Switch>
     </Router>
