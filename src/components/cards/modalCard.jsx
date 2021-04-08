@@ -2,7 +2,7 @@ import React from "react";
 import SmallCard from "./smallCard";
 import ModalComponent from "../Modal/ModalComponent";
 
-export default function Modal() {
+export default function ModalCard() {
   const [showModal, setShowModal] = React.useState(false);
 
   const cancelModal = () => {
