@@ -2,8 +2,8 @@ import React from "react";
 
 const ProfileDisplay = () => {
   return (
-    <div>
-      <div class="w-auto p-8 sm:flex sm:space-x-6 bg-gray-50 text-gray-800">
+    <div className="">
+      <div class="p-8 sm:flex sm:space-x-6 bg-gray-50 text-gray-800">
         <div class="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
           <img
             src="https://source.unsplash.com/100x100/?portrait"
