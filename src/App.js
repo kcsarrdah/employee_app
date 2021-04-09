@@ -7,7 +7,7 @@ import MyTransactions from "./pages/MyTransactions";
 import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import Modalbutton from "./components/cards/modalCard";
 import XlCard from "./components/cards/xlCard";
-import FilterButton from "./components/filterButton/filterbutton";
+import FilterButton from "./components/Buttons/filterButton/filterbutton";
 
 function App() {
   return (

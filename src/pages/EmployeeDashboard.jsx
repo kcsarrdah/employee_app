@@ -4,7 +4,7 @@ import SmallCardContainer from "../components/cards/CardContainer/smallCardconta
 import ModalCard from "../components/cards/modalCard";
 import SpecialCard from "../components/cards/specialCard";
 import XlCard from "../components/cards/xlCard";
-import FilterButton from "../components/filterButton/filterbutton";
+import FilterButton from "../components/Buttons/filterButton/filterbutton";
 import MainBody from "../components/headers/MainBody";
 import ProfileDisplay from "../components/profile/profileDisplay";
 import SearchBar from "../components/searchBar/basicSearchBar";
