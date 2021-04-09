@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import BalanceCard from "../components/cards/BalanceCard";
 import SmallCardContainer from "../components/cards/CardContainer/smallCardcontainer";
 import ModalCard from "../components/cards/modalCard";
@@ -8,8 +8,34 @@ import FilterButton from "../components/Buttons/filterButton/filterbutton";
 import MainBody from "../components/headers/MainBody";
 import ProfileDisplay from "../components/profile/profileDisplay";
 import SearchBar from "../components/searchBar/basicSearchBar";
+import axios from "axios";
+import SmallCard from "../components/cards/smallCard";
 
 const EmployeeDashboard = () => {
+  const [allPerks, setAllPerks] = useState({ Perks: [], Categories: [] });
+
+  useEffect(() => {
+    const options = {
+      headers: {
+        "x-clerkid": "Krishnna1234",
+      },
+    };
+
+    axios
+      .get("http://localhost:3000/employee/perks", options)
+      .then((resp) => {
+        console.log(resp);
+
+        setAllPerks({
+          Perks: resp.data.Perks,
+          Categories: resp.data.categories,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <MainBody>
       <div className="grid grid-cols-4 gap-4 ">
@@ -39,7 +65,7 @@ const EmployeeDashboard = () => {
 
       <div className="grid grid-cols-5 p-4">
         <div className="col-span-3">
-          <FilterButton />
+          <FilterButton Categories={allPerks.Categories} />
         </div>
         <div className="col-span-2 float-right">
           <SearchBar />
@@ -49,14 +75,9 @@ const EmployeeDashboard = () => {
       <div className="grid grid-cols-4 gap-10">
         <div className="col-span-3">
           <SmallCardContainer>
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
-            <ModalCard />
+            {allPerks.Perks.map((Perk, index) => {
+              return <ModalCard Perk={Perk} />;
+            })}
           </SmallCardContainer>
         </div>
         <div className="flex flex-col">
@@ -65,16 +86,13 @@ const EmployeeDashboard = () => {
           </div>
 
           <div>
-              <h1 class="flex-grow pl-4 pt-4 sm:pr-16 text-xl font-medium title-font text-gray-900">
-                Special Perks
+            <h1 class="flex-grow pl-4 pt-4 sm:pr-16 text-xl font-medium title-font text-gray-900">
+              Special Perks
             </h1>
             <div class="h-1 bg-gray-500 rounded m-1"></div>
-              <SpecialCard/>
-              <SpecialCard/>
-
+            <SpecialCard />
+            <SpecialCard />
           </div>
-
-
         </div>
       </div>
     </MainBody>

@@ -13,7 +13,6 @@ const ProfileDisplay = () => {
         },
       })
       .then((resp) => {
-        console.log(resp.data);
         setUserDetails(resp.data);
       })
       .catch((err) => {

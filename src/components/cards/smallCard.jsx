@@ -10,11 +10,13 @@ const SmallCard = (props) => {
           src="https://source.unsplash.com/100x100/?portrait"
         />
         <div className="flex-1 my-4">
-          <p className="text-xl font-semibold leading-snug">Perk name</p>
-          <p>Description</p>
+          <p className="text-xl font-semibold leading-snug">
+            {props.Perk.description}
+          </p>
+          <p>{props.Perk.description}</p>
         </div>
         <div className="flex items-center justify-end p-3 space-x-3 border-t-2">
-          <p>Points</p>
+          <p>{props.Perk.value}</p>
         </div>
       </div>
     </a>

@@ -12,7 +12,6 @@ const BalanceCard = () => {
         },
       })
       .then((resp) => {
-        console.log(resp.data);
         setBalance(resp.data);
       })
       .catch((err) => {
