@@ -3,50 +3,22 @@ import axios from "axios";
 import MainBody from "../components/headers/MainBody";
 
 const MyTransactions = () => {
-  const transactions = [
-    {
-      type: "Perk",
-      name: "Uber",
-      details: "VOUCHER",
-      transactionDetails: "150",
-      status: true,
-      time: "time",
-    },
-    {
-      type: "Topup",
-      details: "For Month of March",
-      transactionDetails: 3000,
-      status: true,
-      time: "time",
-    },
-    {
-      type: "Topup",
-      details: "For Month of March",
-      transactionDetails: 3000,
-      status: false,
-      time: "time",
-    },
-    {
-      type: "Perk",
-      name: "Amazon",
-      details: "VOUCHER",
-      transactionDetails: "500",
-      status: true,
-      time: "time",
-      perkImg:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-    {
-      type: "Perk",
-      name: "Amazon",
-      details: "VOUCHER",
-      transactionDetails: "500",
-      status: false,
-      time: "time",
-      perkImg:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
-    },
-  ];
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/employee/transaction", {
+        headers: {
+          "x-clerkid": "Krishnna1234",
+        },
+      })
+      .then((resp) => {
+        setTransactions(resp.data.Transactions);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <MainBody>
@@ -117,16 +89,17 @@ const MyTransactions = () => {
                 </thead>
 
                 <tbody class="bg-white divide-y divide-gray-200">
-                  {transactions.map((transaction) => {
+                  {transactions.map((transaction, index) => {
+                    let date = new Date(transaction.transactionTime);
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td class="px-6 py-5 whitespace-nowrap">
                           <div class="flex items-center">
                             <div class="flex-shrink-0 h-10 w-10">
                               <img
                                 class="h-10 w-10 rounded-full"
                                 src={
-                                  transaction.type === "Perk"
+                                  transaction.Type === "Perk"
                                     ? transaction.perkImg
                                       ? transaction.perkImg
                                       : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEKWsrQjrLklNeCqRe4FXVCTLKzyQaXWqwWUDyFvq8e1YXaPFu-thyqOzkiwXLshME9H0&usqp=CAU"
@@ -138,13 +111,13 @@ const MyTransactions = () => {
 
                             <div class="ml-4">
                               <div class="text-sm font-medium text-gray-900">
-                                {transaction.type === "Perk"
-                                  ? transaction.name
+                                {transaction.Perk
+                                  ? transaction.transactionType
                                   : "CREDIT FROM ADMIN"}
                               </div>
 
                               <div class="text-sm text-gray-500">
-                                {transaction.details}
+                                {transaction.message}
                               </div>
                             </div>
                           </div>
@@ -152,12 +125,12 @@ const MyTransactions = () => {
 
                         <td class="px-6 py-5 whitespace-nowrap">
                           <div class="text-sm text-gray-900">
-                            {transaction.transactionDetails}
+                            {transaction.value}
                           </div>
 
                           <div class="text-sm text-gray-500">
-                            {transaction.status
-                              ? transaction.type === "Perk"
+                            {!transaction.status
+                              ? transaction.transactionType === "VOUCHER"
                                 ? "Steps Sent on Mail"
                                 : "Added To Perkeasy Account"
                               : ""}
@@ -165,9 +138,9 @@ const MyTransactions = () => {
                         </td>
 
                         <td class="px-6 py-5 whitespace-nowrap">
-                          {transaction.status ? (
+                          {!transaction.status ? (
                             <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                              {transaction.type === "Perk"
+                              {transaction.transactionType === "VOUCHER"
                                 ? "Active"
                                 : "Success"}
                             </span>
@@ -179,7 +152,7 @@ const MyTransactions = () => {
                         </td>
 
                         <td class="px-6 py-5 whitespace-nowrap text-sm text-gray-500">
-                          {transaction.time}
+                          {date.toLocaleTimeString()} {date.toDateString()}
                         </td>
                       </tr>
                     );
