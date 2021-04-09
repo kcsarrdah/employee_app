@@ -1,6 +1,7 @@
 import React from "react";
 import LargeCardCotainer from "../cards/CardContainer/largeCardcontainer";
 import LargeCard from "../cards/largeCard";
+import PerkDetailCard from "../cards/perkDetailCard";
 
 const ModalComponent = (props) => {
   return (
@@ -16,7 +17,7 @@ const ModalComponent = (props) => {
             {/*body*/}
             <div className="relative p-6 flex-auto">
               <p className="m-12 text-blueGray-500 text-lg leading-relaxed">
-                {/* <LargeCardCotainer><LargeCard /></LargeCardCotainer> */}
+                <PerkDetailCard />
               </p>
             </div>
             {/*footer*/}

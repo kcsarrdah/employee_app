@@ -8,6 +8,7 @@ import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import Modalbutton from "./components/cards/modalCard";
 import XlCard from "./components/cards/xlCard";
 import FilterButton from "./components/Buttons/filterButton/filterbutton";
+import PerkDetailCard from "./components/cards/perkDetailCard";
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <FilterButton />
+          <PerkDetailCard />
         </Route>
       </Switch>
     </Router>
