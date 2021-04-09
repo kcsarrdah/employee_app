@@ -20,6 +20,8 @@ function Header() {
           <span class="ml-3 text-xl">Perks App</span>
         </a>
         <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center"></nav>
+        <a href="/">
+ 
         <button class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">
           Logout
           <svg
@@ -34,6 +36,8 @@ function Header() {
             <path d="M5 12h14M12 5l7 7-7 7"></path>
           </svg>
         </button>
+                 
+        </a>
       </div>
     </header>
   );

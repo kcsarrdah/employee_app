@@ -55,6 +55,8 @@ const EmployeeDashboard = () => {
             <ModalCard />
             <ModalCard />
             <ModalCard />
+            <ModalCard />
+            <ModalCard />
           </SmallCardContainer>
         </div>
         <div className="flex flex-col">

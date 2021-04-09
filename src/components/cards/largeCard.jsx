@@ -3,11 +3,11 @@ import React from "react";
 const LargeCard = () => {
   return (
     <div className="p-4 min-w-1/3">
-      <div class=" p-6 rounded-lg border-2 border-gray-300 flex flex-col">
+      <div class=" p-6 rounded-lg border-2 border-gray-600 flex flex-col">
         <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
           perk.date
         </h2>
-        <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">
+        <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-600 leading-none">
           perk
         </h1>
         <p class="flex items-center text-gray-600 mb-2">
@@ -58,7 +58,7 @@ const LargeCard = () => {
           </span>
           perk.descriptionLine3
         </p>
-        <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 focus:outline-none hover:bg-gray-500 rounded">
+        <button class="flex items-center mt-auto text-white bg-gray-600 border-0 py-2 px-4 focus:outline-none hover:bg-gray-800 rounded">
           redeem
           <svg
             fill="none"
@@ -73,7 +73,7 @@ const LargeCard = () => {
           </svg>
         </button>
         <a href="#">
-          <p class="text-xs text-gray-500 mt-3">Terms and conditions</p>
+          <p class="text-xs text-gray-800 mt-3">Terms and conditions</p>
         </a>
       </div>
     </div>

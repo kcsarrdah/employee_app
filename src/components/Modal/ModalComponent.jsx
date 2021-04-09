@@ -1,4 +1,6 @@
 import React from "react";
+import LargeCardCotainer from '../cards/CardContainer/largeCardcontainer'
+import LargeCard from '../cards/largeCard'
 
 const ModalComponent = (props) => {
   return (
@@ -9,16 +11,14 @@ const ModalComponent = (props) => {
           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*header*/}
             <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-              <h3 className="text-3xl font-semibold">Modal Title</h3>
+              <h3 className="text-3xl font-semibold">Confirmation Box</h3>
             </div>
             {/*body*/}
             <div className="relative p-6 flex-auto">
-              <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                I always felt like I could do anything. That’s the main thing
-                people are controlled by! Thoughts- their perception of
-                themselves! They're slowed down by their perception of
-                themselves. If you're taught you can’t do anything, you won’t do
-                anything. I was taught I could do everything.
+              <p className="m-12 text-blueGray-500 text-lg leading-relaxed">
+                <LargeCardCotainer>
+                  <LargeCard />
+                </LargeCardCotainer>
               </p>
             </div>
             {/*footer*/}
@@ -28,14 +28,14 @@ const ModalComponent = (props) => {
                 type="button"
                 onClick={props.cancelModal}
               >
-                Close
+                Cancel
               </button>
               <button
                 className="bg-green-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
                 onClick={props.submitModel}
               >
-                Save Changes
+                Add
               </button>
             </div>
           </div>
