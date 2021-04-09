@@ -24,8 +24,6 @@ const EmployeeDashboard = () => {
     axios
       .get("http://localhost:3000/employee/perks", options)
       .then((resp) => {
-        console.log(resp);
-
         setAllPerks({
           Perks: resp.data.Perks,
           Categories: resp.data.categories,
