@@ -29,18 +29,18 @@ const MyPerks = () => {
 
   return (
     <div>
-      {perks.length === 0 ? (
+      {/* {perks.length === 0 ? (
         <Spinner />
-      ) : (
-        <MainBody>
-          <LargeCardContainer>
-            {perks.map((perk, index) => {
-              return <LargeCard perk={perk} />;
-            })}
-          </LargeCardContainer>
-          <FaqAndTnc />
-        </MainBody>
-      )}
+      ) : ( */}
+      <MainBody>
+        <LargeCardContainer>
+          {perks.map((perk, index) => {
+            return <LargeCard perk={perk} />;
+          })}
+        </LargeCardContainer>
+        <FaqAndTnc />
+      </MainBody>
+      {/* )} */}
     </div>
   );
 };
