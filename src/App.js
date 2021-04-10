@@ -28,9 +28,12 @@ function App() {
         <Route path="/empDashboard" exact>
           <EmployeeDashboard />
         </Route>
+        <Route path="/empDetails" exact>
+        <EmployeeDetails />
+        </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <EmployeeDetails />
+        <EmployeeDetails />
         </Route>
       </Switch>
     </Router>

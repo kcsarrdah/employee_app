@@ -67,6 +67,7 @@ const ProfileDisplay = () => {
                 </svg>
                 <span class="text-gray-600">+25 381 77 983</span>
               </span>
+              <a href="/empDetails">More Info ...</a>
             </div>
           </div>
         </div>
