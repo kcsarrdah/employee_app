@@ -6,6 +6,8 @@ import MyPerks from "./pages/MyPerks";
 import MyTransactions from "./pages/MyTransactions";
 import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import PerkDetailCard from "./components/cards/perkDetailCard";
+import DataDisplay from './components/DataDisplay/datadisplay'
+import EmployeeDetails from "./pages/employeeInfo";
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
         </Route>
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <PerkDetailCard />
+          <EmployeeDetails />
         </Route>
       </Switch>
     </Router>
