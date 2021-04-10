@@ -9,11 +9,12 @@ import MainBody from "../components/headers/MainBody";
 import ProfileDisplay from "../components/profile/profileDisplay";
 import SearchBar from "../components/searchBar/basicSearchBar";
 import axios from "axios";
-import SmallCard from "../components/cards/smallCard";
 
 const EmployeeDashboard = () => {
   const [allPerks, setAllPerks] = useState({ Perks: [], Categories: [] });
+  const [currentCategory, setCurrentCategory] = useState("All");
 
+  // On Mount
   useEffect(() => {
     const options = {
       headers: {
@@ -33,6 +34,41 @@ const EmployeeDashboard = () => {
         console.log(err);
       });
   }, []);
+
+  //Effect if Category is selected
+  useEffect(() => {
+    const options = {
+      headers: {
+        "x-clerkid": "Krishnna1234",
+      },
+    };
+
+    if (currentCategory === "All") {
+      // Select all Perks
+      axios
+        .get("http://localhost:3000/employee/perks", options)
+        .then((resp) => {
+          setAllPerks({
+            Perks: resp.data.Perks,
+            Categories: resp.data.categories,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      // Select Specific Category of Perks
+      options.headers["x-category"] = currentCategory;
+      axios
+        .get("http://localhost:3000/employee/perks/categories", options)
+        .then((resp) => {
+          setAllPerks({ ...allPerks, Perks: resp.data });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [currentCategory]);
 
   return (
     <MainBody>
@@ -63,7 +99,11 @@ const EmployeeDashboard = () => {
 
       <div className="grid grid-cols-5 p-4">
         <div className="col-span-3">
-          <FilterButton Categories={allPerks.Categories} />
+          <FilterButton
+            Categories={allPerks.Categories}
+            currentCategory={currentCategory}
+            setCurrentCategory={setCurrentCategory}
+          />
         </div>
         <div className="col-span-2 float-right">
           <SearchBar />
@@ -74,7 +114,7 @@ const EmployeeDashboard = () => {
         <div className="col-span-3">
           <SmallCardContainer>
             {allPerks.Perks.map((Perk, index) => {
-              return <ModalCard Perk={Perk} />;
+              return <ModalCard Perk={Perk} key={index} />;
             })}
           </SmallCardContainer>
         </div>

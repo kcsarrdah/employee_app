@@ -1,6 +1,4 @@
 import React from "react";
-import LargeCardCotainer from "../cards/CardContainer/largeCardcontainer";
-import LargeCard from "../cards/largeCard";
 import PerkDetailCard from "../cards/perkDetailCard";
 
 const ModalComponent = (props) => {

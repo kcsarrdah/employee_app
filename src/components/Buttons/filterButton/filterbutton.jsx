@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 
 const FilterButton = (props) => {
@@ -15,10 +14,21 @@ const FilterButton = (props) => {
           fill-rule="nonzero"
         />
       </svg>
-      <select class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-        <option>Choose a Category</option>
+
+      <select
+        class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+        value={props.currentCategory}
+        onChange={(e) => {
+          props.setCurrentCategory(e.target.value);
+        }}
+      >
+        <option value="All">Choose a Category</option>
         {props.Categories.map((Category, index) => {
-          return <option>{Category}</option>;
+          return (
+            <option value={Category} key={index}>
+              {Category}
+            </option>
+          );
         })}
       </select>
     </div>
