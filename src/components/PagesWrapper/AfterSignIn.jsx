@@ -7,6 +7,7 @@ import EmployeeDetails from "../../pages/employeeInfo";
 import FormikForm from "../DataDisplay/FormikForm";
 import { useUser } from "@clerk/clerk-react";
 import VerifyForm from "../forms/VerifyForm";
+import MainBody from "../headers/MainBody";
 
 const AfterSignIn = () => {
   const user = useUser();
@@ -19,7 +20,11 @@ const AfterSignIn = () => {
 
   console.log(user);
   if (!user.publicMetadata.activated) {
-    return <VerifyForm user={user} />;
+    return (
+      <MainBody>
+        <VerifyForm user={user} />
+      </MainBody>
+    );
   } else {
     return (
       <Switch>
