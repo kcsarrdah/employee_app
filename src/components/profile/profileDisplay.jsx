@@ -2,14 +2,14 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Spinner from "../Spinner";
 
-const ProfileDisplay = () => {
+const ProfileDisplay = (props) => {
   const [userDetails, setUserDetails] = useState();
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/profile", {
         headers: {
-          "x-clerkid": "Krishnna1234",
+          "x-clerkid": props.clerkid,
         },
       })
       .then((resp) => {

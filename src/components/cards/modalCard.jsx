@@ -15,7 +15,7 @@ export default function ModalCard(props) {
         perkID: props.Perk.id,
       },
       headers: {
-        "x-clerkid": "Krishnna1234",
+        "x-clerkid": props.clerkid,
       },
     };
 

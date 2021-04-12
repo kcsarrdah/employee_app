@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useUser } from "@clerk/clerk-react";
 import MainBody from "../components/headers/MainBody";
 
 const MyTransactions = () => {
+  const user = useUser();
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/employee/transaction", {
         headers: {
-          "x-clerkid": "Krishnna1234",
+          "x-clerkid": user.data.id,
         },
       })
       .then((resp) => {

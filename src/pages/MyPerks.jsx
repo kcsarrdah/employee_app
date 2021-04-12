@@ -5,14 +5,16 @@ import LargeCard from "../components/cards/largeCard";
 import FaqAndTnc from "../components/extras/faqAndTncBox";
 import axios from "axios";
 import Spinner from "../components/Spinner";
+import { useUser } from "@clerk/clerk-react";
 
 const MyPerks = () => {
+  const user = useUser();
   const [perks, setPerks] = useState([]);
 
   useEffect(() => {
     const options = {
       headers: {
-        "x-clerkid": "Krishnna1234",
+        "x-clerkid": user.data.id,
       },
     };
 
@@ -28,20 +30,14 @@ const MyPerks = () => {
   }, []);
 
   return (
-    <div>
-      {perks.length === 0 ? (
-        <Spinner />
-      ) : (
-        <MainBody>
-          <LargeCardContainer>
-            {perks.map((perk, index) => {
-              return <LargeCard perk={perk} />;
-            })}
-          </LargeCardContainer>
-          <FaqAndTnc />
-        </MainBody>
-      )}
-    </div>
+    <MainBody>
+      <LargeCardContainer>
+        {perks.map((perk, index) => {
+          return <LargeCard perk={perk} key={index} />;
+        })}
+      </LargeCardContainer>
+      <FaqAndTnc />
+    </MainBody>
   );
 };
 

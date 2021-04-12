@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import ProfileDisplay from "../profile/profileDisplay";
 
-const BalanceCard = () => {
+const BalanceCard = (props) => {
   const [balance, setBalance] = useState();
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/employee/balance", {
         headers: {
-          "x-clerkid": "Krishnna1234",
+          "x-clerkid": props.clerkid,
         },
       })
       .then((resp) => {

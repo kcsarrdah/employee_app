@@ -6,6 +6,7 @@ import EmployeeDashboard from "../../pages/EmployeeDashboard.jsx";
 import EmployeeDetails from "../../pages/employeeInfo";
 import FormikForm from "../DataDisplay/FormikForm";
 import { useUser } from "@clerk/clerk-react";
+import VerifyForm from "../forms/VerifyForm";
 
 const AfterSignIn = () => {
   const user = useUser();
@@ -18,7 +19,7 @@ const AfterSignIn = () => {
 
   console.log(user);
   if (!user.publicMetadata.activated) {
-    return <h1>Not Activated</h1>;
+    return <VerifyForm user={user} />;
   } else {
     return (
       <Switch>

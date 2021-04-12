@@ -9,8 +9,10 @@ import MainBody from "../components/headers/MainBody";
 import ProfileDisplay from "../components/profile/profileDisplay";
 import SearchBar from "../components/searchBar/basicSearchBar";
 import axios from "axios";
+import { useUser } from "@clerk/clerk-react";
 
 const EmployeeDashboard = () => {
+  const user = useUser();
   const [allPerks, setAllPerks] = useState({ Perks: [], Categories: [] });
   const [currentCategory, setCurrentCategory] = useState("All");
 
@@ -18,7 +20,7 @@ const EmployeeDashboard = () => {
   useEffect(() => {
     const options = {
       headers: {
-        "x-clerkid": "Krishnna1234",
+        "x-clerkid": user.data.id,
       },
     };
 
@@ -39,7 +41,7 @@ const EmployeeDashboard = () => {
   useEffect(() => {
     const options = {
       headers: {
-        "x-clerkid": "Krishnna1234",
+        "x-clerkid": user.data.id,
       },
     };
 
@@ -74,8 +76,8 @@ const EmployeeDashboard = () => {
     <MainBody>
       <div className="grid grid-cols-4 gap-4 ">
         <div className="col-span-3 flex ">
-          <ProfileDisplay />
-          <BalanceCard />
+          <ProfileDisplay clerkid={user.data.id} />
+          <BalanceCard clerkid={user.data.id} />
         </div>
 
         <div className="pr-6">
@@ -114,7 +116,9 @@ const EmployeeDashboard = () => {
         <div className="col-span-3">
           <SmallCardContainer>
             {allPerks.Perks.map((Perk, index) => {
-              return <ModalCard Perk={Perk} key={index} />;
+              return (
+                <ModalCard Perk={Perk} key={index} clerkid={user.data.id} />
+              );
             })}
           </SmallCardContainer>
         </div>
