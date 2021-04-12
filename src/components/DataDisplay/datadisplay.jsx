@@ -27,21 +27,21 @@ const DataDisplay = (props) => {
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Full name</dt>
+              <dt class="text-sm font-medium text-gray-500">Field</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                Margot Foster
+                Details
               </dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Full name</dt>
+              <dt class="text-sm font-medium text-gray-500">Field</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                Margot Foster
+                Details
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Full name</dt>
+              <dt class="text-sm font-medium text-gray-500">Field</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                Margot Foster
+                Details
               </dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -139,8 +139,8 @@ const DataDisplay = (props) => {
         </div>
       </div>
       <div className="container flex flex-row">
-        <button class="btn btn-success px-8 m-4 ">Edit</button>
-        <button class="btn btn-secondary px-8 m-4">Back</button>
+        <a href="/editForm"><button class="btn btn-success px-8 m-4 ">Edit</button></a>
+        <a href="/empDashboard"><button class="btn btn-secondary px-8 m-4">Back</button></a>
       </div>
     </div>
   );

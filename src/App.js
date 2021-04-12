@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from 'react';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
@@ -8,8 +9,18 @@ import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
 import PerkDetailCard from "./components/cards/perkDetailCard";
 import DataDisplay from "./components/DataDisplay/datadisplay";
 import EmployeeDetails from "./pages/employeeInfo";
+import FormikForm from "./components/DataDisplay/FormikForm";
 
 function App() {
+
+  const [fields, updateFields] = useState(
+    {
+      name: 'Admin',
+      email: 'admin@example.com',
+      mobile_no: '012345678'
+    }
+  );
+
   return (
     <Router>
       <Switch>
@@ -33,9 +44,13 @@ function App() {
           <EmployeeDetails />
         </Route>
 
+        <Route path="/editForm" exact>
+          <FormikForm fields={fields} updateFields={updateFields} />
+        </Route>
+
+
         {/*ADD 404 ROUTE  */}
         <Route path="/test" exact>
-          <EmployeeDetails />
         </Route>
       </Switch>
     </Router>
