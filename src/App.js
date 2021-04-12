@@ -1,59 +1,37 @@
-import React, { useState } from 'react';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import LoginPage from "./pages/LoginPage";
-import MyPerks from "./pages/MyPerks";
-import MyTransactions from "./pages/MyTransactions";
-import EmployeeDashboard from "./pages/EmployeeDashboard.jsx";
-import PerkDetailCard from "./components/cards/perkDetailCard";
-import DataDisplay from "./components/DataDisplay/datadisplay";
-import EmployeeDetails from "./pages/employeeInfo";
-import FormikForm from "./components/DataDisplay/FormikForm";
+import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-react";
+import AfterSignIn from "./components/PagesWrapper/AfterSignIn";
+import BeforeSignIn from "./components/PagesWrapper/BeforeSignIn";
 
 function App() {
-
-  const [fields, updateFields] = useState(
-    {
-      name: 'Admin',
-      email: 'admin@example.com',
-      mobile_no: '012345678'
-    }
-  );
-
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <LoginPage />
-        </Route>
+      <ClerkProviderWithNavigate>
+        <SignedOut>
+          <BeforeSignIn />
+        </SignedOut>
 
-        <Route path="/myPerks" exact>
-          <MyPerks />
-        </Route>
-
-        <Route path="/myTransaction" exact>
-          <MyTransactions />
-        </Route>
-
-        <Route path="/empDashboard" exact>
-          <EmployeeDashboard />
-        </Route>
-
-        <Route path="/empDetails" exact>
-          <EmployeeDetails />
-        </Route>
-
-        <Route path="/editForm" exact>
-          <FormikForm fields={fields} updateFields={updateFields} />
-        </Route>
-
-
-        {/*ADD 404 ROUTE  */}
-        <Route path="/test" exact>
-        </Route>
-      </Switch>
+        <SignedIn>
+          <AfterSignIn />
+        </SignedIn>
+      </ClerkProviderWithNavigate>
     </Router>
+  );
+}
+
+function ClerkProviderWithNavigate({ children }) {
+  const { push } = useHistory();
+  return (
+    <ClerkProvider
+      frontendApi="clerk.yjgyw.zurdq.lcl.dev"
+      navigate={(to) => {
+        return push(to);
+      }}
+    >
+      {children}
+    </ClerkProvider>
   );
 }
 
