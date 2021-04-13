@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router";
+import ErrorPage from "../../pages/ErrorPage";
 import LoginPage from "../../pages/LoginPage";
 
 const BeforeSignIn = () => {
@@ -10,7 +11,7 @@ const BeforeSignIn = () => {
       </Route>
 
       <Route path="*" exact>
-        <h1>404</h1>
+        <ErrorPage />
       </Route>
     </Switch>
   );

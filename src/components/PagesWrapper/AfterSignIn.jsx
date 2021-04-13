@@ -8,6 +8,7 @@ import { useUser } from "@clerk/clerk-react";
 import VerifyForm from "../forms/VerifyForm";
 import MainBody from "../headers/MainBody";
 import EditForm from "../../pages/editForm";
+import ErrorPage from "../../pages/ErrorPage";
 
 const AfterSignIn = () => {
   const user = useUser();
@@ -52,7 +53,7 @@ const AfterSignIn = () => {
 
         {/*ADD 404 ROUTE  */}
         <Route path="*" exact>
-          <h1>404</h1>
+          <ErrorPage />
         </Route>
       </Switch>
     );
