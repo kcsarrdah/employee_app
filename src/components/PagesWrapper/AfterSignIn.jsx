@@ -1,24 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import { Switch, Route } from "react-router";
 import MyPerks from "../../pages/MyPerks";
 import MyTransactions from "../../pages/MyTransactions";
 import EmployeeDashboard from "../../pages/EmployeeDashboard.jsx";
 import EmployeeDetails from "../../pages/employeeInfo";
-import FormikForm from "../DataDisplay/FormikForm";
 import { useUser } from "@clerk/clerk-react";
 import VerifyForm from "../forms/VerifyForm";
 import MainBody from "../headers/MainBody";
+import EditForm from "../../pages/editForm";
 
 const AfterSignIn = () => {
   const user = useUser();
 
-  const [fields, updateFields] = useState({
-    name: "Admin",
-    email: "admin@example.com",
-    mobile_no: "012345678",
-  });
-
-  console.log(user);
+  
   if (!user.publicMetadata.activated) {
     return (
       <MainBody>
@@ -49,7 +43,7 @@ const AfterSignIn = () => {
         </Route>
 
         <Route path="/editForm" exact>
-          <FormikForm fields={fields} updateFields={updateFields} />
+          <EditForm />
         </Route>
 
         <Route path="/test" exact>
