@@ -6,7 +6,7 @@ const FaqAndTncCol = () => {
       <div class="container px-5 py-24 mx-auto flex items-center md:flex-row flex-col">
         <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
           <div x-data="dialog()">
-            <button class="btn btn-light" x-spread="trigger">
+            <button class="btn btn-dark" x-spread="trigger">
               TnC
             </button>
             <div class="dialog" x-spread="dialog" x-cloak>
@@ -63,7 +63,7 @@ const FaqAndTncCol = () => {
           </div>
 
           <div x-data="drawer()">
-            <button class="btn btn-light" x-spread="trigger">
+            <button class="btn btn-dark" x-spread="trigger">
               FAQs
             </button>
             <div class="dialog dialog-right" x-spread="drawer" x-cloak>

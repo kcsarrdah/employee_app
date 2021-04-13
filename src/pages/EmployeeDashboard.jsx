@@ -74,7 +74,7 @@ const EmployeeDashboard = () => {
 
   return (
     <MainBody>
-      <div className="grid grid-cols-4 gap-4 ">
+      <div className="grid grid-cols-4 gap-4 mb-12">
         <div className="col-span-3 flex ">
           <ProfileDisplay clerkid={user.data.id} />
           <BalanceCard clerkid={user.data.id} />
@@ -86,20 +86,21 @@ const EmployeeDashboard = () => {
            items-center"
           >
             <a href="/myPerks">
-              <button class="btn px-10 mb-4 btn-outline-secondary">
+              <button class="btn bg-gray-800 p-2 text-gray-100 text-lg px-10 mb-4 shadow-xl btn-outline-secondary hover:bg-gray-100 hover:text-gray-800">
                 My Perks
               </button>
             </a>
             <a href="/myTransaction" class="">
-              <button class="btn btn-outline-secondary">
+              <button class="btn bg-gray-800 px-4 text-lg py-2 text-gray-100 shadow-xl btn-outline-secondary hover:bg-gray-100 hover:text-gray-800">
                 Purchase History
               </button>
             </a>
           </div>
         </div>
       </div>
+      <div class="h-1 bg-gray-900 rounded m-1 mb-16"></div>
 
-      <div className="grid grid-cols-5 p-4">
+      <div className="grid grid-cols-5 p-4 mb-12">
         <div className="col-span-3">
           <FilterButton
             Categories={allPerks.Categories}
@@ -128,10 +129,10 @@ const EmployeeDashboard = () => {
           </div>
 
           <div>
-            <h1 class="flex-grow pl-4 pt-4 sm:pr-16 text-xl font-medium title-font text-gray-900">
+            <h1 class="flex-grow pl-4 pt-4 sm:pr-16 text-xl font-medium title-font text-gray-900 mb-3">
               Special Perks
             </h1>
-            <div class="h-1 bg-gray-500 rounded m-1"></div>
+            <div class="h-1 bg-gray-500 rounded mb-1"></div>
             <SpecialCard />
             <SpecialCard />
           </div>

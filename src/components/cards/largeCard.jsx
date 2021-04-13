@@ -3,16 +3,16 @@ import React from "react";
 const LargeCard = (props) => {
   let date = new Date(props.perk.transactionTime);
   return (
-    <div className="p-4 min-w-1/3">
-      <div class=" p-6 rounded-lg border-2 border-gray-600 flex flex-col">
+    <div className="p-4 min-w-1/4">
+      <div class=" p-6 shadow-xl bg-yellow-50 rounded-2xl border-2 border-gray-600 flex flex-col hover:bg-gray-50">
         <h2 class="text-sm tracking-widest title-font mb-1 font-medium">
           {date.toLocaleTimeString()} - {date.toLocaleDateString()}
         </h2>
         <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-600 leading-none">
           {props.perk.Perk.description}
         </h1>
-        <p class="flex items-center text-gray-600 mb-2">
-          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white  flex-shrink-0">
+        <p class="flex items-center text-gray-800 mb-2">
+          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-600 text-white flex-shrink-0">
             <svg
               fill="none"
               stroke="currentColor"
@@ -27,8 +27,8 @@ const LargeCard = (props) => {
           </span>
           perk.descriptionLine1
         </p>
-        <p class="flex items-center text-gray-600 mb-2">
-          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white flex-shrink-0">
+        <p class="flex items-center text-gray-800 mb-2">
+          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-600 text-white flex-shrink-0">
             <svg
               fill="none"
               stroke="currentColor"
@@ -43,8 +43,8 @@ const LargeCard = (props) => {
           </span>
           perk.descriptionLine2
         </p>
-        <p class="flex items-center text-gray-600 mb-6">
-          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white  flex-shrink-0">
+        <p class="flex items-center text-gray-800 mb-6">
+          <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-600 text-white  flex-shrink-0">
             <svg
               fill="none"
               stroke="currentColor"
