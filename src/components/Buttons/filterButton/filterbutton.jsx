@@ -16,7 +16,7 @@ const FilterButton = (props) => {
       </svg>
 
       <select
-        class="border border-gray-600 shadow-xl rounded-full bg-gray-800 text-gray-100 h-10 pl-5 pr-10 hover:border-gray-400 focus:outline-none appearance-none"
+        class="border border-gray-600 shadow-xl rounded-full bg-primary-600 text-gray-100 h-10 pl-5 pr-10 hover:bg-primary-400 hover:border-gray-400 focus:outline-none appearance-none"
         value={props.currentCategory}
         onChange={(e) => {
           props.setCurrentCategory(e.target.value);

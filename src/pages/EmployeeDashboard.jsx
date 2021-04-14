@@ -80,23 +80,6 @@ const EmployeeDashboard = () => {
           <BalanceCard clerkid={user.data.id} />
         </div>
 
-        <div className="pr-6">
-          <div
-            class="list pt-12 p-auto float-right
-           items-center"
-          >
-            <a href="/myPerks">
-              <button class="btn bg-gray-800 p-2 text-gray-100 text-lg px-10 mb-4 shadow-xl btn-outline-secondary hover:bg-gray-100 hover:text-gray-800">
-                My Perks
-              </button>
-            </a>
-            <a href="/myTransaction" class="">
-              <button class="btn bg-gray-800 px-4 text-lg py-2 text-gray-100 shadow-xl btn-outline-secondary hover:bg-gray-100 hover:text-gray-800">
-                Purchase History
-              </button>
-            </a>
-          </div>
-        </div>
       </div>
       <div class="h-1 bg-gray-900 rounded m-1 mb-16"></div>
 

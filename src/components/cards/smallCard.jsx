@@ -3,7 +3,7 @@ import React from "react";
 const SmallCard = (props) => {
   return (
     <a id="card " className="mx-1" href="#" onClick={props.onClick}>
-      <div className="flex flex-col shadow-2xl justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 sm:w-64  bg-gray-800 text-gray-100 hover:bg-gray-600">
+      <div className="flex flex-col shadow-2xl justify-center w-full px-8 mx-2 my-12 text-center rounded-md md:w-96 lg:w-80 sm:w-64  bg-gray-800 text-gray-100 hover:bg-gray-600">
         <img
           alt=""
           className="self-center w-24 h-24 -mt-12 bg-center bg-cover rounded-full"
